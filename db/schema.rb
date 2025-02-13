@@ -14,9 +14,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_12_152323) do
   create_table "comments", force: :cascade do |t|
     t.text "text", null: false
     t.integer "created_by_id", null: false
+    t.integer "project_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["created_by_id"], name: "index_comments_on_created_by_id"
+    t.index ["project_id"], name: "index_comments_on_project_id"
   end
 
   create_table "projects", force: :cascade do |t|
